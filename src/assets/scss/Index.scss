@@ -1,8 +1,8 @@
 /* ======================= Start-Color ======================= */
-$primary: #ff475b !important;
-$secondary: #335080 !important;
-$tertiary: #f2f2f2 !important;
-$forth: #212529 !important;
+$primary: #7367f0 !important;
+$secondary: #e66465 !important;
+$tertiary: #1f1f1f !important;
+$forth: #555 !important;
 $success: #4bb543 !important;
 $warning: #ff5722 !important;
 $danger: red !important;
@@ -46,8 +46,26 @@ $gray: gray !important;
 .bgdark {
   background: $dark;
 }
+.bg-light-primary {
+  background: #f1f0f9 !important;
+}
+.bg-light-secondary {
+  background: #faf1f1 !important;
+}
+.bg-light-success {
+  background: rgb(232, 243, 232) !important;
+}
+.bg-light-warning {
+  background: #faf0ed !important;
+}
+.bg-light-danger {
+  background: rgb(251, 243, 243) !important;
+}
 .bg-ec {
   background-color: #ececec !important;
+}
+.bg-fa {
+  background-color: #fafafa !important;
 }
 .bg-purple {
   background-color: #6610f2 !important;
@@ -55,12 +73,30 @@ $gray: gray !important;
 .bg-blues {
   background-color: #000940 !important;
 }
+.bg-f4f5f6 {
+  background: #f4f5f6 !important;
+}
+.bg-e8f2fc {
+  background: #e8f2fc !important;
+}
 .bg-glass {
   background: rgba(255, 255, 255, 0.09);
-  border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.2px);
   border: 1px solid rgba(255, 255, 255, 0.13);
+}
+.bg-glass2 {
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(1.7px);
+}
+.liner-color {
+  background: linear-gradient(45deg, #e66465, #9198e5) !important;
+}
+.liner-color2 {
+  background: linear-gradient(45deg, #3f87a6, #f69d3c) !important;
+}
+.liner-color3 {
+  background: linear-gradient(45deg, #0045c7, #ff2c7d) !important;
 }
 /* ======================= End-Bg-Color ======================= */
 
@@ -121,182 +157,58 @@ h4,
 h5,
 h6,
 span,
+button,
+input,
 li {
   font-family: "poppins-regular" !important;
 }
 /* ======================= End-Font-Family ======================= */
 
-/* ======================= Start-Navbar ======================= */
+/* ======================= Start-scrollbar ======================= */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
 }
-
-::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $primary;
-}
-/* ======================= End-Navbar ======================= */
-
-/* ======================= Start-Button ======================= */
-.bgp-outline {
-  background: transparent !important;
-  border: 1px solid #fff !important;
-  color: #fff !important;
-}
-.bgp-outline:hover {
-  background: #fff !important;
-  color: #222 !important;
-}
-/* ======================= End-Button ======================= */
-
-/* ======================= Start-Navbar ======================= */
-.logo {
-  width: 25% !important;
-   @media (max-width:640px) {
-     width: 100% !important;
-  }
-}
-.menu {
-  width: 75% !important;
-}
-.navbtn {
-  width: 25% !important;
-}
-.sidebar-icon{
-  width: 40px !important;
-  height: 40px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-/* ======================= End-Navbar ======================= */
-
-/* ======================= Start-Footer ======================= */
-.footlogo {
-  width: 25% !important;
-  @media (max-width:640px) {
-     width: 100% !important;
-  }
-}
-.footcontent {
-  width: 75% !important;
-  @media (max-width:640px) {
-     width: 100% !important;
-  }
-}
-.footerimg {
-  width: 80% !important;
-  height: 150px !important;
-  @media (max-width:640px) {
-     width: 100% !important;
-     
-  }
-}
-.foot-hr {
-  width: 20% !important;
-  height: 6px !important;
-}
-.social-foot {
-  width: 38px !important;
-  height: 38px !important;
-  border-radius: 50% !important;
-}
-/* ======================= End-Footer ======================= */
-
-/* ======================= Start-Banner ======================= */
-.h-banner {
-  width: 100% !important;
-  height: 90vh !important;
-  @media (max-width:640px) {
-    height: 650px !important;
-  }
-}
-.banner-img {
-  width: 100% !important;
-  height: 500px !important;
-  @media (max-width:640px) {
-    height: 290px !important;
-  }
-}
-/* ======================= End-Banner ======================= */
-
-/* ======================= Start-About ======================= */
-.about-img {
-  width: 100% !important;
-  height: 400px !important;
-  @media (max-width:640px) {
-    height: 220px !important;
-  }
-}
-.about2-img {
-  width: 100% !important;
-  height: 500px !important;
-  @media (max-width:640px) {
-    height: 220px !important;
-  }
-}
-/* ======================= End-About ======================= */
-
-/* ======================= Start-Service ======================= */
-.service-card {
-  height: 230px !important;
-}
-.service-img {
-  width: 40px !important;
-  height: 40px !important;
-}
-.service-dot {
-  width: 70px !important;
-  height: 70px !important;
-  border-radius: 50% !important;
-}
-/* ======================= End-Service ======================= */
-
-/* ======================= Start-Gallery ======================= */
-.gallery-img {
-  width: 100% !important;
-  height: 250px !important;
-}
-.border-pr {
-  border-bottom: 2px solid #ff475b !important;
-}
-.width-gall {
-  width: 100px !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-/* ======================= End-Gallery ======================= */
+/* ======================= End-scrollbar ======================= */
 
 /* ======================= Start-Maincss ======================= */
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none !important;
+}
+p {
+  margin: 0px;
+  padding: 0px;
+}
 .list-none {
   list-style: none !important;
 }
 .cursor-pointer {
   cursor: pointer !important;
 }
-.error-h{
-  height: 100vh !important;
-  @media (max-width:640px) {
+.error-h {
+  height: 90vh !important;
+  @media (max-width: 640px) {
     height: 60vh !important;
   }
 }
-.up-box{
+.up-box {
   width: 50px !important;
   height: 50px !important;
-  @media (max-width:640px) {
+  @media (max-width: 640px) {
     width: 40px !important;
-  height: 40px !important;
+    height: 40px !important;
   }
 }
-.up-img{
+.up-img {
   width: 25px !important;
   height: 25px !important;
-  @media (max-width:640px) {
+  @media (max-width: 640px) {
     width: 20px !important;
-  height: 20px !important;
+    height: 20px !important;
   }
 }
 .z-999 {
@@ -305,8 +217,11 @@ li {
 .h-100 {
   height: 100vh !important;
 }
-.disc {
+.decimal {
   list-style: decimal !important;
+}
+.disc {
+  list-style: disc !important;
 }
 .dot {
   width: 12px !important;
@@ -318,18 +233,61 @@ li {
 .border-ec {
   border: 1px solid #ececec !important;
 }
+.bordb {
+  border-bottom: 1px solid #f4f5f6 !important;
+}
 .center-absolute {
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
-.input-css {
-  border: 1px solid #ececec !important;
-  height: 38px !important;
-  border-radius: 6px !important;
-  padding-left: 12px !important;
+.w-side {
+  width: 17% !important;
+}
+.w-route {
+  width: 83% !important;
+}
+.d-shadow {
+  box-shadow: 0 2px 12px 0 #0000001a !important;
 }
 /* ======================= End-Maincss ======================= */
+
+/* ======================= Start-loader ======================= */
+.loader {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-top: 2px solid $tertiary;
+  border-bottom: 2px solid $tertiary;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+.loader2 {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-top: 2px solid $tertiary;
+  border-bottom: 2px solid $tertiary;
+  width: 70px;
+  height: 70px;
+  animation: spins 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spins {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* ======================= End-loader ======================= */
 
 /* ======================= Start-Animatedcss ======================= */
 .marquee p {
@@ -354,11 +312,192 @@ li {
 .rotate-d {
   transform: rotate(20deg) !important;
 }
+.dashboard .CircularProgressbar .CircularProgressbar-path {
+  stroke: $primary;
+}
+.dashboard .CircularProgressbar .CircularProgressbar-text {
+  fill: $primary;
+}
+.tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.tab__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.tab input:checked ~ .tab__content {
+  max-height: 100%;
+}
+.tab__label::after {
+  width: 1em;
+  height: 100%;
+  text-align: center;
+  transform: rotate(90deg);
+  transition: all 0.3s;
+}
+.tab input:checked + .tab__label::after {
+  transform: rotate(270deg);
+}
 /* ======================= End-Animatedcss ======================= */
 
-.liner-color {
-  background: linear-gradient(#e66465, #9198e5) !important;
+/* ======================= Start-Table ======================= */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
-.liner-color2 {
-  background: linear-gradient(0.25turn, #3f87a6, #f69d3c);
+td {
+  border: 1px solid #ececec;
+  text-align: left;
+  padding: 8px;
 }
+th {
+  background: $primary;
+  border: 1px solid #fff;
+  text-align: left;
+  padding: 10px;
+}
+tr:nth-child(even):hover {
+  background-color: #f8f8fb;
+}
+.h-input {
+  height: 35px !important;
+}
+.cust-scroll {
+  height: 80vh !important;
+  overflow-y: auto !important;
+}
+.side-scroll {
+  height: 90vh !important;
+  overflow-y: auto !important;
+}
+.sidebar-w {
+  width: 25% !important;
+}
+.side-input {
+  width: 95% !important;
+}
+/* ======================= End-Table ======================= */
+
+/* ======================= Start-Button ======================= */
+.primarybtn {
+  background: transparent !important;
+  border: 1px solid #7367f0 !important;
+  color: #7367f0 !important;
+}
+.primarybtn:hover {
+  background: #7367f0 !important;
+  color: #fff !important;
+}
+.secondarybtn {
+  background: transparent !important;
+  border: 1px solid #e66465 !important;
+  color: #e66465 !important;
+}
+.secondarybtn:hover {
+  background: #e66465 !important;
+  color: #fff !important;
+}
+.whitebtn {
+  background: transparent !important;
+  border: 1px solid #fff !important;
+  color: #fff !important;
+}
+.whitebtn:hover {
+  background: #fff !important;
+  color: #7367f0 !important;
+}
+/* ======================= End-Button ======================= */
+
+/* ======================= Start-Sidebar ======================= */
+.sidebar-logo {
+  width: 90px !important;
+  height: 100% !important;
+}
+.activesidebar {
+  color: gray;
+}
+.active {
+  color: $primary;
+}
+.hover-col:hover {
+  background: #fafafa;
+  border-radius: 4px;
+}
+.dot-dash {
+  width: 20px !important;
+  height: 20px !important;
+}
+/* ======================= End-Sidebar ======================= */
+
+/* ======================= Start-Header ======================= */
+.header-logo {
+  width: 40px !important;
+  height: 40px !important;
+}
+.border-h {
+  border-radius: 0 0 0 10px !important;
+}
+/* ======================= End-Header ======================= */
+
+/* ======================= Start-dashboard ======================= */
+.border-d {
+  border-radius: 10px 0 0 0 !important;
+}
+.filter-dash {
+  filter: brightness(2);
+}
+.h-map {
+  height: 170px !important;
+}
+.social-img {
+  width: 60px !important;
+  height: 60px !important;
+}
+.gol-img {
+  width: 130px !important;
+  height: 130px !important;
+}
+.next {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+}
+.dash-scroll{
+  overflow-y: auto !important;
+  height: 86vh !important;
+}
+/* ======================= End-dashboard ======================= */
+
+/* ======================= Start-crm ======================= */
+////
+/* ======================= End-crm ======================= */
+
+/* ======================= Start-blog ======================= */
+.blog-img {
+  width: 100% !important;
+  height: 50px !important;
+}
+/* ======================= End-blog ======================= */
+
+/* ======================= Start-cms ======================= */
+.cms-img {
+  width: 100% !important;
+  height: 50px !important;
+}
+.hover-cms {
+  background: #e9e9f6;
+}
+/* ======================= End-cms ======================= */
+
+/* ======================= Start-bill ======================= */
+.bill-img {
+  width: 50px !important;
+  height: 50px !important;
+}
+/* ======================= End-bill ======================= */
