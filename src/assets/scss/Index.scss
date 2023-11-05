@@ -2,7 +2,7 @@
 $primary: #7367f0 !important;
 $secondary: #e66465 !important;
 $tertiary: #1f1f1f !important;
-$forth: #555 !important;
+$forth: #0f172a !important;
 $success: #4bb543 !important;
 $warning: #ff5722 !important;
 $danger: red !important;
@@ -97,6 +97,9 @@ $gray: gray !important;
 }
 .liner-color3 {
   background: linear-gradient(45deg, #0045c7, #ff2c7d) !important;
+}
+.bg-second{
+  background: #151f3b !important;
 }
 /* ======================= End-Bg-Color ======================= */
 
@@ -236,19 +239,26 @@ p {
 .bordb {
   border-bottom: 1px solid #f4f5f6 !important;
 }
+.borderprimary{
+  border: 1px solid #7367f0 !important;
+}
+.bordersecondary{
+  border: 1px solid #e66465 !important;
+}
 .center-absolute {
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
-.w-side {
-  width: 17% !important;
-}
-.w-route {
-  width: 83% !important;
-}
 .d-shadow {
   box-shadow: 0 2px 12px 0 #0000001a !important;
+}
+.drop-w{
+  width: 120px !important;
+  border-radius: 6px !important;
+}
+.h-banner{
+  height: 300px !important;
 }
 /* ======================= End-Maincss ======================= */
 
@@ -290,9 +300,9 @@ p {
 /* ======================= End-loader ======================= */
 
 /* ======================= Start-Animatedcss ======================= */
-.marquee p {
+.marquee .para {
   transform: translateX(100%);
-  animation: scroll-left 10s linear infinite;
+  animation: scroll-left 12s linear infinite;
 }
 @keyframes scroll-left {
   0% {
@@ -311,12 +321,6 @@ p {
 }
 .rotate-d {
   transform: rotate(20deg) !important;
-}
-.dashboard .CircularProgressbar .CircularProgressbar-path {
-  stroke: $primary;
-}
-.dashboard .CircularProgressbar .CircularProgressbar-text {
-  fill: $primary;
 }
 .tab input {
   position: absolute;
@@ -368,20 +372,6 @@ tr:nth-child(even):hover {
 .h-input {
   height: 35px !important;
 }
-.cust-scroll {
-  height: 80vh !important;
-  overflow-y: auto !important;
-}
-.side-scroll {
-  height: 90vh !important;
-  overflow-y: auto !important;
-}
-.sidebar-w {
-  width: 25% !important;
-}
-.side-input {
-  width: 95% !important;
-}
 /* ======================= End-Table ======================= */
 
 /* ======================= Start-Button ======================= */
@@ -414,90 +404,108 @@ tr:nth-child(even):hover {
 }
 /* ======================= End-Button ======================= */
 
-/* ======================= Start-Sidebar ======================= */
-.sidebar-logo {
-  width: 90px !important;
-  height: 100% !important;
+/* ======================= Start-Navbar ======================= */
+.logo-w{
+  width: 10% !important;
+  @media (max-width:640px) {
+    width: 100% !important;
+  }
 }
-.activesidebar {
-  color: gray;
+.menu-w{
+  width: 80% !important;
+  @media (max-width:640px) {
+    width: 100% !important;
+  }
 }
-.active {
-  color: $primary;
+.btn-w{
+  width: 10% !important;
+  @media (max-width:640px) {
+    width: 100% !important;
+  }
 }
-.hover-col:hover {
-  background: #fafafa;
-  border-radius: 4px;
-}
-.dot-dash {
-  width: 20px !important;
-  height: 20px !important;
-}
-/* ======================= End-Sidebar ======================= */
-
-/* ======================= Start-Header ======================= */
-.header-logo {
-  width: 40px !important;
-  height: 40px !important;
-}
-.border-h {
-  border-radius: 0 0 0 10px !important;
-}
-/* ======================= End-Header ======================= */
-
-/* ======================= Start-dashboard ======================= */
-.border-d {
-  border-radius: 10px 0 0 0 !important;
-}
-.filter-dash {
-  filter: brightness(2);
-}
-.h-map {
-  height: 170px !important;
-}
-.social-img {
-  width: 60px !important;
-  height: 60px !important;
-}
-.gol-img {
-  width: 130px !important;
-  height: 130px !important;
-}
-.next {
+.sidebar-icon{
   width: 30px !important;
   height: 30px !important;
-  border-radius: 50% !important;
 }
-.dash-scroll{
-  overflow-y: auto !important;
-  height: 86vh !important;
+.activetext{
+  color: $white;
+  font-weight: 500 !important;
 }
-/* ======================= End-dashboard ======================= */
+.active{
+  color: $primary;
+  font-weight: 900 !important;
+}
+/* ======================= End-Navbar ======================= */
 
-/* ======================= Start-crm ======================= */
-////
-/* ======================= End-crm ======================= */
-
-/* ======================= Start-blog ======================= */
-.blog-img {
+/* ======================= Start-Home ======================= */
+.banner-img{
   width: 100% !important;
-  height: 50px !important;
+  height: 350px !important;
 }
-/* ======================= End-blog ======================= */
-
-/* ======================= Start-cms ======================= */
-.cms-img {
+.gol-img{
+  width: 80px !important;
+  height: 80px !important;
+}
+.brand-img{
   width: 100% !important;
-  height: 50px !important;
+  height: 90px !important;
 }
-.hover-cms {
-  background: #e9e9f6;
+.leading{
+  line-height: 65px;
 }
-/* ======================= End-cms ======================= */
-
-/* ======================= Start-bill ======================= */
-.bill-img {
+.service-dot{
   width: 50px !important;
   height: 50px !important;
 }
-/* ======================= End-bill ======================= */
+.project-img{
+  width: 100% !important;
+  height: 200px !important;
+}
+.border-project{
+  border-radius: 0 15px 0 0 !important;
+}
+.margin-hr{
+  margin-top: -3px !important;
+}
+.blog-img{
+  width: 100% !important;
+  height: 200px !important;
+}
+/* ======================= End-Home ======================= */
+
+/* ======================= Start-About ======================= */
+.about1-img{
+  width: 100% !important;
+  height: 350px !important;
+}
+.about2-img{
+  width: 100% !important;
+  height: 350px !important;
+}
+/* ======================= End-About ======================= */
+
+/* ======================= Start-Blog ======================= */
+////
+/* ======================= End-Blog ======================= */
+
+/* ======================= Start-Elerning ======================= */
+////
+/* ======================= End-Elerning ======================= */
+
+/* ======================= Start-Connect ======================= */
+/////
+/* ======================= End-Connect ======================= */
+
+/* ======================= Start-Footer ======================= */
+.footlogo{
+  width: 30% !important;
+}
+.footcontent{
+  width: 70% !important;
+}
+.social-foot{
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+}
+/* ======================= End-Footer ======================= */
