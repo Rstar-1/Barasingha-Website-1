@@ -69,7 +69,7 @@ const BlogEver = () => {
                     content.
                   </p>
                   <div className="mtpx5 flex justify-end">
-                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize14">
+                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize11">
                       19/2/2023
                     </p>
                   </div>
@@ -114,7 +114,7 @@ const BlogEver = () => {
                     content.
                   </p>
                   <div className="mtpx5 flex justify-end">
-                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize14">
+                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize11">
                       19/2/2023
                     </p>
                   </div>
@@ -159,7 +159,7 @@ const BlogEver = () => {
                     content.
                   </p>
                   <div className="mtpx5 flex justify-end">
-                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize14">
+                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize11">
                       19/2/2023
                     </p>
                   </div>

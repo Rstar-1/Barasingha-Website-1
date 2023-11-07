@@ -4,6 +4,8 @@ import Navbar from "./website/navbar/Navbar";
 import Footer from "./website/footer/Footer";
 import Home from "./website/home/Home";
 import About from "./website/about/About";
+import Blogs from "./website/blogs/Blogs";
+import Connect from "./website/connect/Connect";
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/connect" element={<Connect />} />
           {/* ======================= End-pages ======================= */}
 
           {/* ======================= Start-Error ======================= */}
