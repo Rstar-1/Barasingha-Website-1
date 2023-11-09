@@ -98,7 +98,7 @@ $gray: gray !important;
 .liner-color3 {
   background: linear-gradient(45deg, #0045c7, #ff2c7d) !important;
 }
-.bg-second{
+.bg-second {
   background: #151f3b !important;
 }
 /* ======================= End-Bg-Color ======================= */
@@ -239,10 +239,10 @@ p {
 .bordb {
   border-bottom: 1px solid #f4f5f6 !important;
 }
-.borderprimary{
+.borderprimary {
   border: 1px solid #7367f0 !important;
 }
-.bordersecondary{
+.bordersecondary {
   border: 1px solid #e66465 !important;
 }
 .center-absolute {
@@ -253,11 +253,11 @@ p {
 .d-shadow {
   box-shadow: 0 2px 12px 0 #0000001a !important;
 }
-.drop-w{
+.drop-w {
   width: 120px !important;
   border-radius: 6px !important;
 }
-.h-banner{
+.h-banner {
   height: 300px !important;
 }
 /* ======================= End-Maincss ======================= */
@@ -374,10 +374,10 @@ tr:nth-child(even):hover {
   border: 1px solid #ececec !important;
   padding-left: 12px !important;
 }
-.w-input{
+.w-input {
   width: 97% !important;
 }
-.text-input{
+.text-input {
   width: 99% !important;
   border: 1px solid #ececec !important;
 }
@@ -414,108 +414,159 @@ tr:nth-child(even):hover {
 /* ======================= End-Button ======================= */
 
 /* ======================= Start-Navbar ======================= */
-.logo-w{
+.logo-w {
   width: 10% !important;
-  @media (max-width:640px) {
+  @media (max-width: 640px) {
     width: 100% !important;
   }
 }
-.menu-w{
+.menu-w {
   width: 80% !important;
-  @media (max-width:640px) {
+  @media (max-width: 640px) {
     width: 100% !important;
   }
 }
-.btn-w{
+.btn-w {
   width: 10% !important;
-  @media (max-width:640px) {
+  @media (max-width: 640px) {
     width: 100% !important;
   }
 }
-.sidebar-icon{
+.sidebar-icon {
   width: 30px !important;
   height: 30px !important;
 }
-.activetext{
+.activetext {
   color: $white;
   font-weight: 500 !important;
 }
-.active{
+.active {
   color: $primary;
   font-weight: 900 !important;
 }
 /* ======================= End-Navbar ======================= */
 
 /* ======================= Start-Home ======================= */
-.banner-img{
+.banner-img {
   width: 100% !important;
   height: 350px !important;
 }
-.gol-img{
+.gol-img {
   width: 80px !important;
   height: 80px !important;
 }
-.brand-img{
+.brand-img {
   width: 100% !important;
   height: 90px !important;
 }
-.leading{
+.leading {
   line-height: 65px;
 }
-.service-dot{
+.service-dot {
   width: 50px !important;
   height: 50px !important;
 }
-.project-img{
+.project-img {
   width: 100% !important;
   height: 200px !important;
 }
-.border-project{
+.border-project {
   border-radius: 0 15px 0 0 !important;
 }
-.margin-hr{
+.margin-hr {
   margin-top: -3px !important;
-}
-.blog-img{
-  width: 100% !important;
-  height: 200px !important;
 }
 /* ======================= End-Home ======================= */
 
 /* ======================= Start-About ======================= */
-.about1-img{
+.about1-img {
   width: 100% !important;
   height: 350px !important;
 }
-.about2-img{
+.about2-img {
   width: 100% !important;
   height: 350px !important;
 }
 /* ======================= End-About ======================= */
 
 /* ======================= Start-Blog ======================= */
-////
+.blog-img {
+  width: 100% !important;
+  height: 200px !important;
+}
+.blogoverview-img{
+  width: 100% !important;
+  height: 400px !important;
+}
 /* ======================= End-Blog ======================= */
 
+/* ======================= Start-Plans ======================= */
+.plan-img {
+  width: 35px !important;
+  height: 35px !important;
+}
+.side-img {
+  width: 105px !important;
+  height: 105px !important;
+}
+/* ======================= End-Plans ======================= */
+
 /* ======================= Start-Elerning ======================= */
-////
+.bg-circle {
+  width: 170px !important;
+  height: 170px !important;
+  margin-top: -39% !important;
+  margin-left: 39% !important;
+}
+.bg-circle2 {
+  width: 120px !important;
+  height: 120px !important;
+  margin-top: -40% !important;
+  margin-left: 40% !important;
+}
+.elearn-img {
+  width: 100% !important;
+  height: 200px !important;
+}
 /* ======================= End-Elerning ======================= */
 
+/* ======================= Start-Ecommerce ======================= */
+.ecom-dot {
+  width: 35px !important;
+  height: 35px !important;
+}
+.w-ecom {
+  width: 98% !important ;
+}
+.ecom-img {
+  width: 100% !important;
+  height: 200px !important;
+}
+.ecomoverview-img{
+  width: 100% !important;
+  height: 400px !important;
+}
+.ecogrid-img{
+  width: 100% !important;
+  height: 120px !important;
+}
+/* ======================= End-Ecommerce ======================= */
+
 /* ======================= Start-Connect ======================= */
-.connect-img{
+.connect-img {
   width: 90px !important;
   height: 90px !important;
 }
 /* ======================= End-Connect ======================= */
 
 /* ======================= Start-Footer ======================= */
-.footlogo{
+.footlogo {
   width: 30% !important;
 }
-.footcontent{
+.footcontent {
   width: 70% !important;
 }
-.social-foot{
+.social-foot {
   width: 40px !important;
   height: 40px !important;
   border-radius: 50% !important;

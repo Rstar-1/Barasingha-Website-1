@@ -6,6 +6,11 @@ import Home from "./website/home/Home";
 import About from "./website/about/About";
 import Blogs from "./website/blogs/Blogs";
 import Connect from "./website/connect/Connect";
+import Plans from "./website/plans/Plans";
+import Elearning from "./website/elearning/Elearning";
+import Ecommece from "./website/ecommerce/Ecommece";
+import BlogOverview from "./website/blogs/components/blogoverview/BlogOverview";
+import EcomOverview from "./website/ecommerce/components/ecomoverview/EcomOverview";
 
 const App = () => {
   return (
@@ -18,7 +23,12 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogoverview" element={<BlogOverview />} />
           <Route path="/connect" element={<Connect />} />
+          <Route path="/plans" element={<Plans />} />
+          <Route path="/elearning" element={<Elearning />} />
+          <Route path="/ecommerce" element={<Ecommece />} />
+          <Route path="/ecomoverview" element={<EcomOverview />} />
           {/* ======================= End-pages ======================= */}
 
           {/* ======================= Start-Error ======================= */}

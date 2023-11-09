@@ -6,28 +6,28 @@ const BlogBox = () => {
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">
         <div className="flex overflow-auto gap-12">
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-20 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             Category
           </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-20 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             New
           </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-20 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             Wow
           </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-20 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             Category
           </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-20 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             New
           </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-20 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             Wow
           </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-20 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             How the
           </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-20 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             Wow
           </p>
         </div>
