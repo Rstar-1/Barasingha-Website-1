@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import project from "../../../assets/log.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -17,12 +17,21 @@ const Projects = () => {
           <div className="mtpx20">
             <Swiper
               effect={"coverflow"}
+              spaceBetween={10}
               grabCursor={true}
+              slidesPerView={"3"}
               loop
               className="mySwiper"
-              spaceBetween={10}
-              slidesPerView={3}
             >
+              <SwiperSlide>
+                <div className="p10 bg-light-primary rounded-10">
+                  <img
+                    src={project}
+                    alt="project"
+                    className="project-img object-contain"
+                  />
+                </div>
+              </SwiperSlide>
               <SwiperSlide>
                 <div className="p10 bg-light-primary rounded-10">
                   <img
@@ -64,11 +73,20 @@ const Projects = () => {
             <Swiper
               effect={"coverflow"}
               grabCursor={true}
+              slidesPerView={"3"}
               loop
-              className="mySwiper"
               spaceBetween={10}
-              slidesPerView={3}
+              className="mySwiper"
             >
+              <SwiperSlide>
+                <div className="p10 bg-light-primary rounded-10">
+                  <img
+                    src={project}
+                    alt="project"
+                    className="project-img object-contain"
+                  />
+                </div>
+              </SwiperSlide>
               <SwiperSlide>
                 <div className="p10 bg-light-primary rounded-10">
                   <img
@@ -102,6 +120,6 @@ const Projects = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Projects
+export default Projects;

@@ -1,6 +1,6 @@
 /* ======================= Start-Color ======================= */
 $primary: #7367f0 !important;
-$secondary: #e66465 !important;
+$secondary: #c54b8c !important;
 $tertiary: #1f1f1f !important;
 $forth: #0f172a !important;
 $success: #4bb543 !important;
@@ -556,6 +556,11 @@ tr:nth-child(even):hover {
 .connect-img {
   width: 90px !important;
   height: 90px !important;
+}
+.social-connect {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
 }
 /* ======================= End-Connect ======================= */
 

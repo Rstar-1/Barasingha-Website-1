@@ -1,9 +1,22 @@
-import React from "react";
-import blog from "../../../assets/log.png";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const BlogEver = () => {
+  const [getuserdata, setUserdata] = useState([]);
+
+  const getdata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/getdata",
+    });
+    setUserdata(response.data);
+  };
+  useEffect(() => {
+    getdata();
+  }, []);
   return (
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">
@@ -24,148 +37,41 @@ const BlogEver = () => {
         </div>
         <div className="mtpx35">
           <Swiper
-            effect={"coverflow"}
             grabCursor={true}
-            loop
             className="mySwiper"
             spaceBetween={10}
             slidesPerView={3}
           >
-            <SwiperSlide>
-              <div className="p6 bgwhite rounded-10">
-                <div className="p5">
-                  <img
-                    src={blog}
-                    alt="blog"
-                    className="blog-img bg-light-primary rounded-10 object-contain"
-                  />
-                </div>
+            {getuserdata.map((element, id) => (
+              <SwiperSlide>
+                <NavLink to={`/blogoverview/${element._id}`}>
+                  <div className="rounded-10 bgwhite d-shadow p10">
+                    <img
+                      src={element.img}
+                      alt="logo"
+                      className="blog-img bg-light-primary rounded-10 object-cover"
+                    />
+                    <div className="p5">
+                      <small className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
+                        {element.category}
+                      </small>
 
-                <div className="p10">
-                  <div className="flex flex-wrap gap-8">
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Category
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      New
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Wow
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      How the
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Wow
-                    </p>
+                      <h3 className="mtpx5 fsize17 mbpx1 textforth">
+                        {element.title}
+                      </h3>
+                      <p className="mtpx2 textgray fsize13 line-clamp3">
+                        {element.desc}
+                      </p>
+                      <div className="mtpx8 flex justify-end w-full">
+                        <p className=" textgray fsize11">
+                          {new Date(element.createdAt).toDateString()}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-
-                  <h5 className="texttertiary font-600 mtpx9 mbpx1 fsize20">
-                    Blog Management
-                  </h5>
-                  <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize14">
-                    In publishing and graphic design, Lorem graphic design,
-                    ipsum is a placeholder graphic design, graphic design, text
-                    content.
-                  </p>
-                  <div className="mtpx5 flex justify-end">
-                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize11">
-                      19/2/2023
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="p6 bgwhite rounded-10">
-                <div className="p5">
-                  <img
-                    src={blog}
-                    alt="blog"
-                    className="blog-img bg-light-primary rounded-10 object-contain"
-                  />
-                </div>
-
-                <div className="p10">
-                  <div className="flex flex-wrap gap-8">
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Category
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      New
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Wow
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      How the
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Wow
-                    </p>
-                  </div>
-
-                  <h5 className="texttertiary font-600 mtpx9 mbpx1 fsize20">
-                    Blog Management
-                  </h5>
-                  <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize14">
-                    In publishing and graphic design, Lorem graphic design,
-                    ipsum is a placeholder graphic design, graphic design, text
-                    content.
-                  </p>
-                  <div className="mtpx5 flex justify-end">
-                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize11">
-                      19/2/2023
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="p6 bgwhite rounded-10">
-                <div className="p5">
-                  <img
-                    src={blog}
-                    alt="blog"
-                    className="blog-img bg-light-primary rounded-10 object-contain"
-                  />
-                </div>
-
-                <div className="p10">
-                  <div className="flex flex-wrap gap-8">
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Category
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      New
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Wow
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      How the
-                    </p>
-                    <p className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
-                      Wow
-                    </p>
-                  </div>
-
-                  <h5 className="texttertiary font-600 mtpx9 mbpx1 fsize20">
-                    Blog Management
-                  </h5>
-                  <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize14">
-                    In publishing and graphic design, Lorem graphic design,
-                    ipsum is a placeholder graphic design, graphic design, text
-                    content.
-                  </p>
-                  <div className="mtpx5 flex justify-end">
-                    <p className="textgray font-500 mtpx5 text-justify mbpx1 fsize11">
-                      19/2/2023
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
+                </NavLink>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

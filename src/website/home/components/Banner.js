@@ -8,7 +8,7 @@ const Banner = () => {
       <div className="container mx-auto">
         <div className="flex w-full items-center">
           <div className="w-50">
-            <h2 className="textwhite font-600 text-left sm-text-justify mbpx1 fsize25">
+            <h2 className="textsecondary font-600 text-left sm-text-justify mbpx1 fsize25">
               Sub Title
             </h2>
             <h3 className="textprimary font-600 mtpx9 leading mbpx1 fsize50">
@@ -24,7 +24,7 @@ const Banner = () => {
 
             <div className="flex items-center gap-10">
               <button className="border-0 cursor-pointer font-500 textwhite rounded-5 ptpx12 pbpx12 plpx35 prpx35 mtpx20 fsize16 bgprimary">
-                About Us
+                Connect
               </button>
               <button className="cursor-pointer font-500 rounded-5 ptpx12 pbpx12 plpx35 prpx35 mtpx20 fsize16 primarybtn">
                 About Us

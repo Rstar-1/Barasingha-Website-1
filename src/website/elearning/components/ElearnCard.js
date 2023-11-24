@@ -6,7 +6,7 @@ const ElearnCard = () => {
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">
         <div className="flex overflow-auto gap-12">
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
+          <p className="ptpx5 pbpx5 plpx30 prpx30 bgprimary textwhite fsize16 rounded-10 w-max">
             Category
           </p>
           <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
@@ -17,18 +17,6 @@ const ElearnCard = () => {
           </p>
           <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
             Category
-          </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
-            New
-          </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
-            Wow
-          </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
-            How the
-          </p>
-          <p className="ptpx5 pbpx5 plpx30 prpx30 bg-light-primary textprimary fsize16 rounded-10 w-max">
-            Wow
           </p>
         </div>
         <div className="flex gap-12 items-start mtpx20 w-full">
@@ -43,7 +31,6 @@ const ElearnCard = () => {
                   />
                 </div>
                 <div className="pbpx20 prpx20 plpx20 ptpx5">
-                  
                   <p className="textgray font-500 mtpx1 text-justify mbpx1 fsize11">
                     19/2/2023
                   </p>
@@ -75,7 +62,6 @@ const ElearnCard = () => {
                   />
                 </div>
                 <div className="pbpx20 prpx20 plpx20 ptpx5">
-                  
                   <p className="textgray font-500 mtpx1 text-justify mbpx1 fsize11">
                     19/2/2023
                   </p>
@@ -107,7 +93,6 @@ const ElearnCard = () => {
                   />
                 </div>
                 <div className="pbpx20 prpx20 plpx20 ptpx5">
-                  
                   <p className="textgray font-500 mtpx1 text-justify mbpx1 fsize11">
                     19/2/2023
                   </p>
@@ -139,7 +124,6 @@ const ElearnCard = () => {
                   />
                 </div>
                 <div className="pbpx20 prpx20 plpx20 ptpx5">
-                  
                   <p className="textgray font-500 mtpx1 text-justify mbpx1 fsize11">
                     19/2/2023
                   </p>
@@ -171,7 +155,6 @@ const ElearnCard = () => {
                   />
                 </div>
                 <div className="pbpx20 prpx20 plpx20 ptpx5">
-                  
                   <p className="textgray font-500 mtpx1 text-justify mbpx1 fsize11">
                     19/2/2023
                   </p>
@@ -203,7 +186,6 @@ const ElearnCard = () => {
                   />
                 </div>
                 <div className="pbpx20 prpx20 plpx20 ptpx5">
-                  
                   <p className="textgray font-500 mtpx1 text-justify mbpx1 fsize11">
                     19/2/2023
                   </p>
