@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/swiper.min.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
 const BlogEver = () => {
+  const [cmsdata, setcmsdata] = useState("");
+  const [cmsdata2, setcmsdata2] = useState("");
+  const [cmsdata3, setcmsdata3] = useState("");
+
   const [getuserdata, setUserdata] = useState([]);
 
   const getdata = async () => {
@@ -14,24 +19,34 @@ const BlogEver = () => {
     });
     setUserdata(response.data);
   };
+   const getcmsdata = async () => {
+     const response = await axios({
+       method: "get",
+       url: "http://localhost:8000/api/gettextdata",
+     });
+     setcmsdata(response.data[32]);
+     setcmsdata2(response.data[33]);
+     setcmsdata3(response.data[34]);
+   };
   useEffect(() => {
     getdata();
+    getcmsdata();
   }, []);
   return (
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center w-full">
+        <div className="flex sm-block justify-between items-center w-full">
           <div>
-            <h4 className="textprimary font-600 mtpx1 mbpx1 fsize35">
-              Blog<span className="textwhite mlpx5">Ever</span>
+            <h4 className="textprimary font-600 mtpx1 mbpx1 sm-fsize21 fsize35">
+              {cmsdata.title}
+              <span className="textwhite mlpx5">{cmsdata2.title}</span>
             </h4>
-            <p className="textwhite font-500  text-left sm-text-justify mbpx1 fsize16">
-              In publishing and graphic design, Lorem ipsum is a placeholder
-              text content.
+            <p className="textwhite font-500 sm-fsize13 sm-mtpx6 text-left sm-text-justify mbpx1 fsize16">
+              {cmsdata3.title}
             </p>
           </div>
 
-          <button className="border-0 cursor-pointer font-500 textwhite rounded-5 ptpx12 pbpx12 plpx35 prpx35 fsize16 bgprimary">
+          <button className="border-0 cursor-pointer font-500 sm-mtpx10 sm-fsize13 sm-ptpx9 sm-pbpx9 sm-prpx25 sm-plpx25 textwhite rounded-5 ptpx12 pbpx12 plpx35 prpx35 fsize16 bgprimary">
             Blog Next
           </button>
         </div>
@@ -39,27 +54,55 @@ const BlogEver = () => {
           <Swiper
             grabCursor={true}
             className="mySwiper"
-            spaceBetween={10}
-            slidesPerView={3}
+            breakpoints={{
+              1536: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              1280: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              991: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              640: {
+                slidesPerView: 1.1,
+                spaceBetween: 30,
+              },
+              425: {
+                slidesPerView: 1.1,
+                spaceBetween: 30,
+              },
+              325: {
+                slidesPerView: 1.1,
+                spaceBetween: 30,
+              },
+            }}
           >
             {getuserdata.map((element, id) => (
               <SwiperSlide>
                 <NavLink to={`/blogoverview/${element._id}`}>
-                  <div className="rounded-10 bgwhite d-shadow p10">
+                  <div className="rounded-10 bgwhite d-shadow p10 sm-p5">
                     <img
                       src={element.img}
                       alt="logo"
                       className="blog-img bg-light-primary rounded-10 object-cover"
                     />
                     <div className="p5">
-                      <small className="ptpx3 pbpx3 plpx20 prpx20 bg-light-primary textprimary fsize13 rounded-20 w-max">
+                      <small className="ptpx3 pbpx3 sm-prpx15 sm-plpx15 plpx20 prpx20 sm-fsize12 bg-light-primary textprimary fsize13 rounded-20 w-max">
                         {element.category}
                       </small>
 
-                      <h3 className="mtpx5 fsize17 mbpx1 textforth">
+                      <h3 className="mtpx5 fsize17 sm-fsize15 mbpx1 textforth">
                         {element.title}
                       </h3>
-                      <p className="mtpx2 textgray fsize13 line-clamp3">
+                      <p className="mtpx2 textgray fsize13 sm-fsize12 line-clamp3">
                         {element.desc}
                       </p>
                       <div className="mtpx8 flex justify-end w-full">

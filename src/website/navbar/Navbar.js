@@ -21,12 +21,12 @@ const Navbar = () => {
       route: "plans",
     },
     {
-      icon: "grid",
+      icon: "folder",
       name: "Blogs",
       route: "blogs",
     },
     {
-      icon: "phone-call",
+      icon: "file",
       name: "Elearning",
       route: "elearning",
     },
@@ -45,7 +45,7 @@ const Navbar = () => {
             <div className="bgprimary p5">
               <div className="flex items-center justify-between gap-4 plpx10 prpx10">
                 <p className="fsize16 textwhite mtpx4 mbpx4 cursor-pointer font-500">
-                  Navbar
+                  RS Developers
                 </p>
                 <FeatherIcon
                   icon="x"
@@ -61,7 +61,7 @@ const Navbar = () => {
                   <div className="flex items-center gap-8 plpx20 prpx20 mbpx20">
                     <FeatherIcon
                       icon={e.icon}
-                      className="textprimary"
+                      className="textforth"
                       size={17}
                     />
                     <NavLink to={e.route}>
@@ -82,7 +82,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center container mx-auto">
         <div className="logo-w">
           <h1 className="fsize21 sm-mtpx1 sm-mbpx1 font-900 textprimary">
-            RS<span className="textsecondary mlpx2">Deve</span>
+            RS<span className="textwhite mlpx2">Deve</span>
           </h1>
         </div>
         <div className="flex justify-center gap-5 items-center sm-hidden prpx60 sm-prpx1 menu-w">
@@ -99,7 +99,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="hidden sm-block">
-          <div className="bg-ec sidebar-icon justify-center items-center flex">
+          <div className="bg-ec sidebar-icon rounded-5 justify-center items-center flex">
             <FeatherIcon
               icon="align-justify"
               className="textgray"

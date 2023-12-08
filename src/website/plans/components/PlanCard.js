@@ -4,12 +4,28 @@ import plan from "../../../assets/plan.svg";
 import silver from "../../../assets/silver.png";
 import gold from "../../../assets/gold.png";
 import FeatherIcon from "feather-icons-react";
+import Basicuser from "./popup/Basicuser";
 import axios from "axios";
+import Premiumuser from "./popup/Premiumuser";
+import SuperPremiumuser from "./popup/SuperPremiumuser";
 
 const PlanCard = () => {
   const [getuserdata, setUserdata] = useState([]);
   const [getuserdata2, setUserdata2] = useState([]);
   const [getuserdata3, setUserdata3] = useState([]);
+  const [cmsdata, setcmsdata] = useState("");
+  const [cmsdata2, setcmsdata2] = useState("");
+  const [cmsdata3, setcmsdata3] = useState("");
+  const [cmsdata4, setcmsdata4] = useState("");
+  const [cmsdata5, setcmsdata5] = useState("");
+  const [cmsdata6, setcmsdata6] = useState("");
+
+  // Basic Popup
+  const [Basic, setBasic] = useState(false);
+  // Premium Popup
+  const [Premium, setPremium] = useState(false);
+  // Super Premium Popup
+  const [SuperPremium, setSuperPremium] = useState(false);
 
   const getdata = async () => {
     const response = await axios({
@@ -32,40 +48,123 @@ const PlanCard = () => {
     });
     setUserdata3(response.data);
   };
+  const getcmsdata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/gettextdata",
+    });
+    setcmsdata(response.data[47]);
+    setcmsdata2(response.data[48]);
+    setcmsdata3(response.data[49]);
+    setcmsdata4(response.data[50]);
+    setcmsdata5(response.data[51]);
+    setcmsdata6(response.data[52]);
+  };
   useEffect(() => {
     getdata();
     getdatatwo();
     getdatathree();
+    getcmsdata();
   }, []);
   return (
     <div className="bg-second ptpx40 pbpx40">
+      {/* ============== Basic Popup ============== */}
+      {Basic ? (
+        <div className="bg-glass2 fixed top-0 right-0 h-100 w-full z-99">
+          <div className="bgwhite d-shadow w-30 absolute center-absolute rounded-5 overflow-hidden">
+            <div className="p15 bgprimary">
+              <div className="flex items-center justify-between gap-4">
+                <p className="textwhite fsize15 font-500">Basic User</p>
+                <FeatherIcon
+                  icon="x"
+                  className="textwhite cursor-pointer"
+                  size={20}
+                  onClick={() => setBasic(false)}
+                />
+              </div>
+            </div>
+            <Basicuser />
+          </div>
+        </div>
+      ) : null}
+      {/* ============== Basic Popup ============== */}
+
+      {/* ============== Premium Popup ============== */}
+      {Premium ? (
+        <div className="bg-glass2 fixed top-0 right-0 h-100 w-full z-99">
+          <div className="bgwhite d-shadow w-30 absolute center-absolute rounded-5 overflow-hidden">
+            <div className="p15 bgprimary">
+              <div className="flex items-center justify-between gap-4">
+                <p className="textwhite fsize15 font-500">Premium User</p>
+                <FeatherIcon
+                  icon="x"
+                  className="textwhite cursor-pointer"
+                  size={20}
+                  onClick={() => setPremium(false)}
+                />
+              </div>
+            </div>
+            <Premiumuser />
+          </div>
+        </div>
+      ) : null}
+      {/* ============== Premium Popup ============== */}
+
+      {/* ============== SuperPremium Popup ============== */}
+      {SuperPremium ? (
+        <div className="bg-glass2 fixed top-0 right-0 h-100 w-full z-99">
+          <div className="bgwhite d-shadow w-30 absolute center-absolute rounded-5 overflow-hidden">
+            <div className="p15 bgprimary">
+              <div className="flex items-center justify-between gap-4">
+                <p className="textwhite fsize15 font-500">Super Premium User</p>
+                <FeatherIcon
+                  icon="x"
+                  className="textwhite cursor-pointer"
+                  size={20}
+                  onClick={() => setSuperPremium(false)}
+                />
+              </div>
+            </div>
+            <SuperPremiumuser />
+          </div>
+        </div>
+      ) : null}
+      {/* ============== SuperPremium Popup ============== */}
+
       <div className="container mx-auto">
-        <div className="grid-cols-3 gap-12">
-          <div className="p30 bgwhite rounded-10 shadow relative">
+        <div className="grid-cols-3 sm-grid-cols-1 gap-12">
+          <div className="p30 sm-p18 bgwhite rounded-10 shadow relative">
             <img
               src={copper}
               alt="copper"
               className="plan-img bg-ec p5 rounded-full"
             />
             <div>
-              <small className="textgray fsize14 font-500">Small Plans</small>
-              <h2 className="textdark fsize24 mtpx3 mbpx1 font-600">
-                Basic Plans
+              <small className="textgray fsize14 sm-fsize13 font-500">
+                {cmsdata.title}
+              </small>
+              <h2 className="textprimary fsize24 mtpx3 mbpx1 sm-fsize20 font-600">
+                {cmsdata2.title}
               </h2>
               <div className="mtpx10 grid-cols-1 gap-9">
                 {getuserdata.map((e) => (
-                  <div className="flex items-center gap-5">
+                  <div className="flex items-start gap-5">
                     <FeatherIcon
                       icon="check"
-                      className="textsuccess"
+                      className="textsuccess mtpx5"
                       size={18}
                     />
-                    <p className="fsize15 font-600 texttertiary">{e.plan}</p>
+                    <p className="fsize15 sm-fsize13 font-600 texttertiary">
+                      {e.plan}
+                    </p>
                   </div>
                 ))}
               </div>
               <div className="mtpx20">
-                <button className="border-0 cursor-pointer font-500 textwhite rounded-5 w-full ptpx10 pbpx10 plpx35 prpx35 fsize15 bgprimary">
+                <button
+                  className="border-0 cursor-pointer sm-fsize13 font-500 textwhite rounded-5 w-full ptpx10 pbpx10 plpx35 prpx35 fsize15 bgprimary"
+                  onClick={() => setBasic(true)}
+                >
                   Choose Plan
                 </button>
               </div>
@@ -78,31 +177,38 @@ const PlanCard = () => {
               />
             </div>
           </div>
-          <div className="p30 bgwhite rounded-10 shadow relative">
+          <div className="p30 sm-p18 bgwhite rounded-10 shadow relative">
             <img
               src={silver}
               alt="copper"
               className="plan-img bg-ec p5 rounded-full"
             />
             <div>
-              <small className="textgray fsize14 font-500">Small Plans</small>
-              <h2 className="textdark fsize24 mtpx3 mbpx1 font-600">
-                Basic Plans
+              <small className="textgray fsize14 sm-fsize13 font-500">
+                {cmsdata3.title}
+              </small>
+              <h2 className="textprimary fsize24 sm-fsize20 mtpx3 mbpx1 font-600">
+                {cmsdata4.title}
               </h2>
               <div className="mtpx10 grid-cols-1 gap-9">
                 {getuserdata2.map((e) => (
-                  <div className="flex items-center gap-5">
+                  <div className="flex items-start gap-5">
                     <FeatherIcon
                       icon="check"
-                      className="textsuccess"
+                      className="textsuccess mtpx5"
                       size={18}
                     />
-                    <p className="fsize15 font-600 texttertiary">{e.plan}</p>
+                    <p className="fsize15 sm-fsize13 font-600 texttertiary">
+                      {e.plan}
+                    </p>
                   </div>
                 ))}
               </div>
               <div className="mtpx20">
-                <button className="border-0 cursor-pointer font-500 textwhite rounded-5 w-full ptpx10 pbpx10 plpx35 prpx35 fsize15 bgprimary">
+                <button
+                  className="border-0 cursor-pointer font-500 sm-fsize13 textwhite rounded-5 w-full ptpx10 pbpx10 plpx35 prpx35 fsize15 bgprimary"
+                  onClick={() => setPremium(true)}
+                >
                   Choose Plan
                 </button>
               </div>
@@ -115,31 +221,38 @@ const PlanCard = () => {
               />
             </div>
           </div>
-          <div className="p30 bgwhite rounded-10 shadow relative">
+          <div className="p30 sm-p18 bgwhite rounded-10 shadow relative">
             <img
               src={gold}
               alt="copper"
               className="plan-img bg-ec p5 rounded-full"
             />
             <div>
-              <small className="textgray fsize14 font-500">Small Plans</small>
-              <h2 className="textdark fsize24 mtpx3 mbpx1 font-600">
-                Basic Plans
+              <small className="textgray fsize14 sm-fsize13 font-500">
+                {cmsdata5.title}
+              </small>
+              <h2 className="textprimary fsize24 sm-fsize20 mtpx3 mbpx1 font-600">
+                {cmsdata6.title}
               </h2>
               <div className="mtpx10 grid-cols-1 gap-9">
                 {getuserdata3.map((e) => (
-                  <div className="flex items-center gap-5">
+                  <div className="flex items-start gap-5">
                     <FeatherIcon
                       icon="check"
-                      className="textsuccess"
+                      className="textsuccess mtpx5"
                       size={18}
                     />
-                    <p className="fsize15 font-600 texttertiary">{e.plan}</p>
+                    <p className="fsize15 sm-fsize13 font-600 texttertiary">
+                      {e.plan}
+                    </p>
                   </div>
                 ))}
               </div>
               <div className="mtpx20">
-                <button className="border-0 cursor-pointer font-500 textwhite rounded-5 w-full ptpx10 pbpx10 plpx35 prpx35 fsize15 bgprimary">
+                <button
+                  className="border-0 cursor-pointer sm-fsize13 font-500 textwhite rounded-5 w-full ptpx10 pbpx10 plpx35 prpx35 fsize15 bgprimary"
+                  onClick={() => setSuperPremium(true)}
+                >
                   Choose Plan
                 </button>
               </div>
