@@ -14,7 +14,7 @@ import axios from "axios";
 const Home = () => {
   const [seodata, setseodata] = useState("");
 
-  const getdata = async () => {
+  const getseodata = async () => {
     const response = await axios({
       method: "get",
       url: "http://localhost:8000/api/getseodata",
@@ -22,7 +22,7 @@ const Home = () => {
     setseodata(response.data[0]);
   };
   useEffect(() => {
-    getdata();
+    getseodata();
   }, []);
   return (
     <div>

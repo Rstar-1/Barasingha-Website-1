@@ -82,7 +82,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center container mx-auto">
         <div className="logo-w">
           <h1 className="fsize21 sm-mtpx1 sm-mbpx1 font-900 textprimary">
-            RS<span className="textwhite mlpx2">Deve</span>
+            Bara<span className="textwhite mlpx2">Singha</span>
           </h1>
         </div>
         <div className="flex justify-center gap-5 items-center sm-hidden prpx60 sm-prpx1 menu-w">

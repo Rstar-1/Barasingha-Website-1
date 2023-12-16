@@ -1,25 +1,31 @@
-import React from 'react'
-import Banner from './components/Banner'
-import About1 from './components/About1'
-import About2 from './components/About2'
-import ConnectEver from '../common/ConnectEver'
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import Banner from "./components/Banner";
+import About1 from "./components/About1";
+import About2 from "./components/About2";
+import ConnectEver from "../common/ConnectEver";
+import axios from "axios";
 
 const About = () => {
+  const [seodata, setseodata] = useState("");
+
+  const getseodata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/getseodata",
+    });
+    setseodata(response.data[1]);
+  };
+  useEffect(() => {
+    getseodata();
+  }, []);
   return (
     <div>
       <Helmet>
-        <link rel="canonical" href="http://localhost:3001/home" />
-        <meta name="title" content="H" />
-        <meta name="description" content="This is a description of my page" />
-        <meta name="keywords" content="Website" />
-        <meta name="author" content="Barasingha" />
-        <meta property="og:title" content="My Page Title" />
-        <meta
-          property="og:description"
-          content="This is a description of my page"
-        />
-        <meta property="og:url" content="https://example.com/my-page" />
+        <title>{seodata.metatitle}</title>
+        <meta name="description" content={seodata.metadescription} />
+        <meta name="keywords" content={seodata.metakeyword} />
+        <meta name="author" content={seodata.metaauthor} />
       </Helmet>
       <Banner />
       <About1 />
@@ -27,6 +33,6 @@ const About = () => {
       <ConnectEver />
     </div>
   );
-}
+};
 
-export default About
+export default About;
