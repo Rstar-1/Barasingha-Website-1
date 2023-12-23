@@ -4,6 +4,7 @@ import gol from "../../../assets/new2.png";
 import FeatherIcon from "feather-icons-react";
 
 const ConnectForm = () => {
+  // CMS UseState Data
   const [cmsdata, setcmsdata] = useState("");
   const [cmsdata2, setcmsdata2] = useState("");
   const [cmsdata3, setcmsdata3] = useState("");
@@ -15,7 +16,8 @@ const ConnectForm = () => {
   const [cmsdata9, setcmsdata9] = useState("");
   const [cmsdata10, setcmsdata10] = useState("");
 
-  const getdata = async () => {
+  // API Call
+  const getcmsdata = async () => {
     const response = await axios({
       method: "get",
       url: "http://localhost:8000/api/gettextdata",
@@ -31,9 +33,12 @@ const ConnectForm = () => {
     setcmsdata9(response.data[65]);
     setcmsdata10(response.data[66]);
   };
+
+  // Render API
   useEffect(() => {
-    getdata();
+    getcmsdata();
   }, []);
+
   return (
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">

@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 const BlogBox = () => {
-  const [getuserdata, setUserdata] = useState([]);
+  // Blog UseState Data
+  const [blogdata, setblogdata] = useState([]);
 
-  const getdata = async () => {
+  // API Call
+  const getblogdata = async () => {
     const response = await axios({
       method: "get",
       url: "http://localhost:8000/api/getdata",
     });
-    setUserdata(response.data);
+    setblogdata(response.data);
   };
+
+  // Render API
   useEffect(() => {
-    getdata();
+    getblogdata();
   }, []);
+
   return (
     <div className="bg-second ptpx40 pbpx40 sm-ptpx20 sm-pbpx20">
       <div className="container mx-auto">
@@ -33,7 +38,7 @@ const BlogBox = () => {
           </p>
         </div>
         <div className="grid-cols-3 sm-grid-cols-1 gap-9 mtpx30">
-          {getuserdata.map((element, id) => (
+          {blogdata.map((element, id) => (
             <NavLink to={`/blogoverview/${element._id}`}>
               <div className="rounded-10 bgwhite d-shadow p10 sm-p5">
                 <img

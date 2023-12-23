@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const ConnectEver = () => {
+  // CMS UseState Data
   const [cmsdata, setcmsdata] = useState("");
   const [cmsdata2, setcmsdata2] = useState("");
 
-  const getdata = async () => {
+  // API Call
+  const getcmsdata = async () => {
     const response = await axios({
       method: "get",
       url: "http://localhost:8000/api/gettextdata",
@@ -13,9 +15,12 @@ const ConnectEver = () => {
     setcmsdata(response.data[35]);
     setcmsdata2(response.data[36]);
   };
+
+  // Render API
   useEffect(() => {
-    getdata();
+    getcmsdata();
   }, []);
+
   return (
     <div className="ptpx40 pbpx20 sm-ptpx20 sm-pbpx1 bgforth">
       <div className="container mx-auto">

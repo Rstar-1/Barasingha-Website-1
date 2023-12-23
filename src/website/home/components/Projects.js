@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import project from "../../../assets/log.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper";
 import "swiper/css";
 import "swiper/swiper.min.css";
+import project from "../../../assets/log.png";
 
 const Projects = () => {
+  // CMS UseState Data
   const [cmsdata, setcmsdata] = useState("");
   const [cmsdata2, setcmsdata2] = useState("");
 
-  const getdata = async () => {
+  // API Call
+  const getcmsdata = async () => {
     const response = await axios({
       method: "get",
       url: "http://localhost:8000/api/gettextdata",
@@ -18,9 +20,12 @@ const Projects = () => {
     setcmsdata(response.data[22]);
     setcmsdata2(response.data[23]);
   };
+
+  // Render API
   useEffect(() => {
-    getdata();
+    getcmsdata();
   }, []);
+
   return (
     <div className="bg-second ptpx40 pbpx40 sm-ptpx20 sm-pbpx20">
       <div className="container mx-auto">

@@ -1,8 +1,11 @@
 import React from "react";
 import brand from "../../../assets/new2.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import SwiperCore, { Autoplay } from "swiper";
 import "swiper/swiper.min.css";
+import "swiper/css";
+
+SwiperCore.use([Autoplay]);
 
 const Brands = () => {
   return (
@@ -10,8 +13,11 @@ const Brands = () => {
       <div className="container mx-auto">
         <Swiper
           grabCursor={true}
-          loop
           className="mySwiper"
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             1536: {
               slidesPerView: 5,

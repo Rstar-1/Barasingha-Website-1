@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 //Pages
-import Banner from "./components/Banner";
-import ConnectForm from "./components/ConnectForm";
+import Banner from "./components/Banner"
+import Website from './components/Website'
+import ConnectEver from '../common/ConnectEver'
 
-const Connect = () => {
+const Gallery = () => {
   // SEO UseState Data
   const [seodata, setseodata] = useState("");
 
@@ -15,7 +16,7 @@ const Connect = () => {
       method: "get",
       url: "http://localhost:8000/api/getseodata",
     });
-    setseodata(response.data[5]);
+    setseodata(response.data[1]);
   };
 
   // Render API
@@ -32,9 +33,10 @@ const Connect = () => {
         <meta name="author" content={seodata.metaauthor} />
       </Helmet>
       <Banner />
-      <ConnectForm />
+      <Website />
+      <ConnectEver />
     </div>
   );
 };
 
-export default Connect;
+export default Gallery;

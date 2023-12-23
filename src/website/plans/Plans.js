@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import axios from "axios";
+//Pages
 import Banner from "./components/Banner";
 import PlanCard from "./components/PlanCard";
 import ConnectEver from "../common/ConnectEver";
-import axios from "axios";
 
 const Plans = () => {
+  // SEO UseState Data
   const [seodata, setseodata] = useState("");
 
+  // API Call
   const getseodata = async () => {
     const response = await axios({
       method: "get",
@@ -15,9 +18,12 @@ const Plans = () => {
     });
     setseodata(response.data[2]);
   };
+
+  // Render API
   useEffect(() => {
     getseodata();
   }, []);
+
   return (
     <div>
       <Helmet>

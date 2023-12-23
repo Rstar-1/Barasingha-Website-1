@@ -11,6 +11,7 @@ import Elearning from "./website/elearning/Elearning";
 import Ecommece from "./website/ecommerce/Ecommece";
 import BlogOverview from "./website/blogs/components/blogoverview/BlogOverview";
 import EcomOverview from "./website/ecommerce/components/ecomoverview/EcomOverview";
+import Gallery from "./website/gallery/Gallery";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogoverview/:id" element={<BlogOverview />} />
           <Route path="/connect" element={<Connect />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/plans" element={<Plans />} />
           <Route path="/elearning" element={<Elearning />} />
           <Route path="/ecommerce" element={<Ecommece />} />

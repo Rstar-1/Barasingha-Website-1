@@ -139,6 +139,42 @@ $gray: gray !important;
 }
 /* ======================= End-Text-Color ======================= */
 
+/* ======================= Start-Border ======================= */
+.border-primary {
+  border: 1px solid $primary;
+}
+.border-secondary {
+  border: 1px solid $secondary;
+}
+.border-tertiary {
+  border: 1px solid $tertiary;
+}
+.border-forth {
+  border: 1px solid $forth;
+}
+.border-success {
+  border: 1px solid $success;
+}
+.border-warning {
+  border: 1px solid $warning;
+}
+.border-danger {
+  border: 1px solid $danger;
+}
+.border-info {
+  border: 1px solid $info;
+}
+.border-white {
+  border: 1px solid $white;
+}
+.border-gray {
+  border: 1px solid $gray;
+}
+.border-dark {
+  border: 1px solid $dark;
+}
+/* ======================= End-Border ======================= */
+
 /* ======================= Start-Font-Family ======================= */
 @font-face {
   font-family: "poppins-regular";
@@ -178,6 +214,7 @@ body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  word-wrap: break-word !important;
 }
 a {
   text-decoration: none !important;
@@ -347,6 +384,41 @@ p {
 .tab input:checked + .tab__label::after {
   transform: rotate(270deg);
 }
+.flip-card {
+  width: 100%;
+  height: 250px;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background-color: $forth;
+  border-radius: 5px !important;
+}
+.flip-card-back {
+  background-color: $primary;
+  transform: rotateY(180deg);
+  border-radius: 5px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
 /* ======================= End-Animatedcss ======================= */
 
 /* ======================= Start-Table ======================= */
@@ -418,19 +490,19 @@ tr:nth-child(even):hover {
 
 /* ======================= Start-Navbar ======================= */
 .logo-w {
-  width: 10% !important;
+  width: 15% !important;
   @media (max-width: 640px) {
     width: 100% !important;
   }
 }
 .menu-w {
-  width: 80% !important;
+  width: 70% !important;
   @media (max-width: 640px) {
     width: 100% !important;
   }
 }
 .btn-w {
-  width: 10% !important;
+  width: 15% !important;
   @media (max-width: 640px) {
     width: 100% !important;
   }
@@ -453,9 +525,21 @@ tr:nth-child(even):hover {
 .banner-img {
   width: 100% !important;
   height: 350px !important;
+  animation: tiltImage 2s linear infinite !important;
   @media (max-width: 640px) {
     width: 100% !important;
     height: 200px !important;
+  }
+}
+@keyframes tiltImage {
+  0% {
+    transform: skewY(2deg);
+  }
+  50% {
+    transform: skewY(-2deg);
+  }
+  100% {
+    transform: skewY(2deg);
   }
 }
 .gol-img {
@@ -547,6 +631,10 @@ tr:nth-child(even):hover {
   width: 105px !important;
   height: 105px !important;
 }
+.popup-img {
+  width: 250px !important;
+  height: 290px !important;
+}
 /* ======================= End-Plans ======================= */
 
 /* ======================= Start-Elerning ======================= */
@@ -615,6 +703,10 @@ tr:nth-child(even):hover {
 .footlogo {
   width: 30% !important;
 }
+.footerimg{
+  width: 100% !important;
+  height: 200px !important;
+}
 .footcontent {
   width: 70% !important;
 }
@@ -622,5 +714,13 @@ tr:nth-child(even):hover {
   width: 40px !important;
   height: 40px !important;
   border-radius: 50% !important;
+}
+.foot-hr {
+  height: 3px !important;
+  background: #7367f0 !important;
+  border: none !important;
+  width: 30% !important;
+  margin-left: 0px !important;
+  margin-right: auto !important;
 }
 /* ======================= End-Footer ======================= */

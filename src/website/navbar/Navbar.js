@@ -27,8 +27,8 @@ const Navbar = () => {
     },
     {
       icon: "file",
-      name: "Elearning",
-      route: "elearning",
+      name: "Gallery",
+      route: "gallery",
     },
     {
       icon: "phone-call",
@@ -81,9 +81,11 @@ const Navbar = () => {
       ) : null}
       <div className="flex justify-between items-center container mx-auto">
         <div className="logo-w">
-          <h1 className="fsize21 sm-mtpx1 sm-mbpx1 font-900 textprimary">
-            Bara<span className="textwhite mlpx2">Singha</span>
-          </h1>
+          <NavLink to="/">
+            <h1 className="fsize21 sm-mtpx1 sm-mbpx1 font-900 textprimary">
+              Bara<span className="textwhite mlpx2">Singha</span>
+            </h1>
+          </NavLink>
         </div>
         <div className="flex justify-center gap-5 items-center sm-hidden prpx60 sm-prpx1 menu-w">
           {NavMenu.map((e) => (
@@ -109,8 +111,8 @@ const Navbar = () => {
         </div>
 
         <div className="btn-w flex gap-8 items-center sm-hidden justify-end">
-          <button className="border-0 cursor-pointer font-500 textwhite rounded-20 ptpx8 pbpx8 plpx35 prpx35 fsize14 bgprimary">
-            Login
+          <button className="border-0 cursor-pointer font-500 textwhite rounded-20 ptpx7 pbpx7 plpx29 prpx29 fsize14 bgprimary">
+            Reviews
           </button>
         </div>
       </div>

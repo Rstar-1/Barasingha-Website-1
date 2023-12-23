@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import axios from "axios";
+//Pages
 import Banner from "./components/Banner";
 import BlogBox from "./components/BlogBox";
 import ConnectEver from "../common/ConnectEver";
-import axios from "axios";
 
 const Blogs = () => {
+  // SEO UseState Data
   const [seodata, setseodata] = useState("");
 
+  // API Call
   const getseodata = async () => {
     const response = await axios({
       method: "get",
@@ -15,9 +18,12 @@ const Blogs = () => {
     });
     setseodata(response.data[3]);
   };
+
+  // Render API
   useEffect(() => {
     getseodata();
   }, []);
+
   return (
     <div>
       <Helmet>

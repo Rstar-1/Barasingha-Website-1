@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import popup from "../../../../assets/rock.png";
 
 const Premiumuser = () => {
   // Validation
@@ -57,48 +58,58 @@ const Premiumuser = () => {
   };
 
   return (
-    <div className="p15">
-      <div className="">
-        <label className="textforth fsize14 font-500">User Name</label>
-        <div>
-          <input
-            placeholder="Enter User Name"
-            type="text"
-            value={inpval.name}
-            onChange={setVal}
-            name="name"
-            id="name"
-            className="h-input rounded-5 mtpx5 pop-input"
-          />
+    <div className="relative">
+      <div className="p15">
+        <div className="">
+          <label className="textforth fsize14 font-500">Name</label>
+          <div>
+            <input
+              placeholder="Enter User Name"
+              type="text"
+              value={inpval.name}
+              onChange={setVal}
+              name="name"
+              id="name"
+              className="h-input rounded-5 mtpx5 w-50 sm-w-90"
+            />
+          </div>
+          <p className="fsize12 textdanger font-300 mtpx3 mlpx2">{NameError}</p>
         </div>
-        <p className="fsize12 textdanger font-300 mtpx3 mlpx2">{NameError}</p>
-      </div>
-      <div className="mtpx12">
-        <label className="textforth fsize14 font-500">Message</label>
-        <div>
-          <textarea
-            placeholder="Enter Message"
-            type="text"
-            value={inpval.message}
-            onChange={setVal}
-            name="message"
-            id="message"
-            cols={4}
-            rows={4}
-            className="rounded-5 border-ec p5 mtpx5 pop-input"
-          ></textarea>
+        <div className="mtpx12">
+          <label className="textforth fsize14 font-500">Message</label>
+          <div>
+            <textarea
+              placeholder="Enter Message"
+              type="text"
+              value={inpval.message}
+              onChange={setVal}
+              name="message"
+              id="message"
+              cols={4}
+              rows={4}
+              className="rounded-5 border-ec p5 mtpx5 w-50 sm-w-90"
+            ></textarea>
+          </div>
+          <p className="fsize12 textdanger font-300 mtpx3 mlpx2">
+            {MessageError}
+          </p>
         </div>
-        <p className="fsize12 textdanger font-300 mtpx3 mlpx2">
-          {MessageError}
-        </p>
+        <div className="mtpx16">
+          <button
+            className="border-0 cursor-pointer font-500 textwhite rounded-5 ptpx8 pbpx8 plpx35 prpx35 fsize14 bgprimary"
+            onClick={addUserdata}
+          >
+            Submit
+          </button>
+        </div>
       </div>
-      <div className="flex justify-center mtpx20">
-        <button
-          className="border-0 cursor-pointer font-500 textwhite rounded-5 ptpx8 pbpx8 plpx35 prpx35 fsize14 bgprimary"
-          onClick={addUserdata}
-        >
-          Submit
-        </button>
+      <div className="bg-light-primary block sm-hidden p40"></div>
+      <div className="absolute bottom-0 right-0 block sm-hidden">
+        <img
+          src={popup}
+          alt="popup"
+          className="popup-img mrpx5 object-contain"
+        />
       </div>
     </div>
   );

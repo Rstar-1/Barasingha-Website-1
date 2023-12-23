@@ -1,37 +1,42 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/swiper.min.css";
-import axios from "axios";
-import { NavLink } from "react-router-dom";
 
 const BlogEver = () => {
+  // CMS UseState Data
   const [cmsdata, setcmsdata] = useState("");
   const [cmsdata2, setcmsdata2] = useState("");
   const [cmsdata3, setcmsdata3] = useState("");
+  // Blog UseState Data
+  const [blogdata, setblogdata] = useState([]);
 
-  const [getuserdata, setUserdata] = useState([]);
-
-  const getdata = async () => {
+  // API Call
+  const getblogdata = async () => {
     const response = await axios({
       method: "get",
       url: "http://localhost:8000/api/getdata",
     });
-    setUserdata(response.data);
+    setblogdata(response.data);
   };
-   const getcmsdata = async () => {
-     const response = await axios({
-       method: "get",
-       url: "http://localhost:8000/api/gettextdata",
-     });
-     setcmsdata(response.data[32]);
-     setcmsdata2(response.data[33]);
-     setcmsdata3(response.data[34]);
-   };
+  const getcmsdata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/gettextdata",
+    });
+    setcmsdata(response.data[32]);
+    setcmsdata2(response.data[33]);
+    setcmsdata3(response.data[34]);
+  };
+
+  // Render API
   useEffect(() => {
-    getdata();
+    getblogdata();
     getcmsdata();
   }, []);
+
   return (
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">
@@ -85,7 +90,7 @@ const BlogEver = () => {
               },
             }}
           >
-            {getuserdata.map((element, id) => (
+            {blogdata.map((element, id) => (
               <SwiperSlide>
                 <NavLink to={`/blogoverview/${element._id}`}>
                   <div className="rounded-10 bgwhite d-shadow p10 sm-p5">
