@@ -9,7 +9,7 @@ const Banner = () => {
   const getdata = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/gettextdata",
+      url: "http://localhost:8000/api/gettextalldata",
     });
     setcmsdata(response.data[72]);
     setcmsdata2(response.data[73]);

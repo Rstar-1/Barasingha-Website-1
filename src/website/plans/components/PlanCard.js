@@ -35,7 +35,7 @@ const PlanCard = () => {
   const getcmsdata = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/gettextdata",
+      url: "http://localhost:8000/api/gettextalldata",
     });
     setcmsdata(response.data[47]);
     setcmsdata2(response.data[48]);
@@ -47,21 +47,21 @@ const PlanCard = () => {
   const getplandata = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/getplandata",
+      url: "http://localhost:8000/api/getplanalldata",
     });
     setplansdata(response.data);
   };
   const getplandatatwo = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/getplantwodata",
+      url: "http://localhost:8000/api/getplanalltwodata",
     });
     setplansdata2(response.data);
   };
   const getplandatathree = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/getplanthirddata",
+      url: "http://localhost:8000/api/getplanallthirddata",
     });
     setplansdata3(response.data);
   };

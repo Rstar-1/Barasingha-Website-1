@@ -26,7 +26,7 @@ const Navbar = () => {
       route: "blogs",
     },
     {
-      icon: "file",
+      icon: "grid",
       name: "Gallery",
       route: "gallery",
     },

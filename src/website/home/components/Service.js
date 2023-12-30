@@ -18,7 +18,7 @@ const Service = () => {
   const getcmsdata = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/gettextdata",
+      url: "http://localhost:8000/api/gettextalldata",
     });
     setcmsdata(response.data[24]);
     setcmsdata2(response.data[25]);

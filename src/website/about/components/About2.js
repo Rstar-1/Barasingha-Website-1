@@ -13,7 +13,7 @@ const About2 = () => {
   const getcmsdata = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/gettextdata",
+      url: "http://localhost:8000/api/gettextalldata",
     });
     setcmsdata(response.data[42]);
     setcmsdata2(response.data[43]);

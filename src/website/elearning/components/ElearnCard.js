@@ -10,7 +10,7 @@ const ElearnCard = () => {
   const getdata = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/gettextdata",
+      url: "http://localhost:8000/api/gettextalldata",
     });
     setcmsdata(response.data[69]);
     setcmsdata2(response.data[70]);
