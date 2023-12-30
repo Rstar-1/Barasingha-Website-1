@@ -10,7 +10,7 @@ const BlogBox = () => {
   const getblogdata = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/getdata",
+      url: "http://localhost:8000/api/getallblogdata",
     });
     setblogdata(response.data);
   };
@@ -38,11 +38,11 @@ const BlogBox = () => {
           </p>
         </div>
         <div className="grid-cols-3 sm-grid-cols-1 gap-9 mtpx30">
-          {blogdata.map((element, id) => (
+          {blogdata.map((element) => (
             <NavLink to={`/blogoverview/${element._id}`}>
               <div className="rounded-10 bgwhite d-shadow p10 sm-p5">
                 <img
-                  src={element.img}
+                  src={element.picture}
                   alt="logo"
                   className="blog-img bg-light-primary rounded-10 object-cover"
                 />

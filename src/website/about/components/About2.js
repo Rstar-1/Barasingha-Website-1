@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-import about from "../../../assets/reg.png";
 
 const About2 = () => {
   // CMS UseState Data
   const [cmsdata, setcmsdata] = useState("");
   const [cmsdata2, setcmsdata2] = useState("");
   const [cmsdata3, setcmsdata3] = useState("");
+  // CMS Image UseState Data
+  const [cmsimagedata, setcmsimagedata] = useState("");
 
   // API Call
   const getcmsdata = async () => {
@@ -15,14 +16,22 @@ const About2 = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[42]);
-    setcmsdata2(response.data[43]);
-    setcmsdata3(response.data[44]);
+    setcmsdata(response.data[41]);
+    setcmsdata2(response.data[42]);
+    setcmsdata3(response.data[43]);
   };
+ const getcmsimagedata = async () => {
+   const response = await axios({
+     method: "get",
+     url: "http://localhost:8000/api/getimagealldata",
+   });
+   setcmsimagedata(response.data[7]);
+ };
 
   // Render API
   useEffect(() => {
     getcmsdata();
+    getcmsimagedata();
   }, []);
 
   return (
@@ -42,7 +51,7 @@ const About2 = () => {
           </div>
           <div className="w-40 sm-mtpx30 sm-w-full">
             <img
-              src={about}
+              src={cmsimagedata.picture}
               alt="about2"
               className="about2-img object-contain"
             />

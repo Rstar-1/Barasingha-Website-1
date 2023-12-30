@@ -8,28 +8,36 @@ const Overview = () => {
   const [Desc, StepDesc] = useState("");
   const [Category, StepCategory] = useState("");
   const [createdAt, StepcreatedAt] = useState("");
-  const [imagenew1, SetImage1] = useState("");
-  const [imagenew2, SetImage2] = useState("");
-  console.log(imagenew2);
+  const [Image, SetImage] = useState("");
+  const [cmsdata, setcmsdata] = useState("");
 
   const { id } = useParams("");
   console.log(id);
 
-  const getsingledata = async () => {
+  const getsingleblogdata = async () => {
     const editresponse = await axios({
       method: "get",
-      url: `http://localhost:8000/api/getsingledata/${id}`,
+      url: `http://localhost:8000/api/getsingleblogdata/${id}`,
     });
     StepTitle(editresponse.data.title);
     StepCategory(editresponse.data.category);
     StepDesc(editresponse.data.desc);
-    SetImage1(editresponse.data.images);
-    SetImage2(editresponse.data.img);
+    SetImage(editresponse.data.picture);
     StepcreatedAt(editresponse.data.createdAt);
   };
+   const getcmsdata = async () => {
+     const response = await axios({
+       method: "get",
+       url: "http://localhost:8000/api/gettextalldata",
+     });
+     setcmsdata(response.data[56]);
+   };
+  
   useEffect(() => {
-    getsingledata();
+    getsingleblogdata();
+    getcmsdata()
   }, []);
+
   return (
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">
@@ -43,9 +51,9 @@ const Overview = () => {
                 {new Date(createdAt).toDateString()}
               </p>
               <img
-                src={imagenew1}
+                src={Image}
                 alt="blog"
-                className="blogoverview-img bg-light-primary mtpx16 rounded-10"
+                className="blogoverview-img bg-light-primary object-contain mtpx16 rounded-10"
               />
               <div className="mtpx6">
                 <div className="flex flex-wrap mtpx10 gap-8">
@@ -63,7 +71,7 @@ const Overview = () => {
             <div className="">
               <div className="bgwhite shadow ptpx5 pbpx5 plpx15 prpx15 rounded-5">
                 <h6 className="textprimary fsize17 mtpx1 mbpx1 font-semibold">
-                  Top Popular
+                  {cmsdata.title}
                 </h6>
               </div>
               <div className="grid-cols-1 mtpx10">

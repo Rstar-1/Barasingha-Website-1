@@ -1,20 +1,41 @@
-import React from "react";
-import ecom from "../../../../../assets/log.png";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
-import FeatherIcon from "feather-icons-react";
 import "swiper/css";
+import FeatherIcon from "feather-icons-react";
+import ecom from "../../../../../assets/log.png";
 
 const SimilarEcom = () => {
+  // CMS UseState Data
+  const [cmsdata, setcmsdata] = useState("");
+  const [cmsdata2, setcmsdata2] = useState("");
+  const [cmsdata3, setcmsdata3] = useState("");
+
+  // API Call
+  const getcmsdata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/gettextalldata",
+    });
+    setcmsdata(response.data[79]);
+    setcmsdata2(response.data[80]);
+    setcmsdata3(response.data[81]);
+  };
+
+  // Render API
+  useEffect(() => {
+    getcmsdata();
+  }, []);
   return (
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">
         <div>
           <h4 className="textprimary font-600 mtpx1 mbpx1 fsize35">
-            Ecom<span className="textwhite mlpx5">Ever</span>
+            {cmsdata.title}
+            <span className="textwhite mlpx5">{cmsdata2.title}</span>
           </h4>
           <p className="textwhite font-500  text-left sm-text-justify mbpx1 fsize16">
-            In publishing and graphic design, Lorem ipsum is a placeholder text
-            content.
+            {cmsdata3.title}
           </p>
         </div>
 

@@ -11,8 +11,8 @@ const Banner = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[72]);
-    setcmsdata2(response.data[73]);
+    setcmsdata(response.data[54]);
+    setcmsdata2(response.data[55]);
   };
   useEffect(() => {
     getdata();

@@ -3,20 +3,25 @@ import axios from "axios";
 import RubberBand from "react-reveal/RubberBand";
 
 const Banner = () => {
+  // CMS UseState Data
   const [cmsdata, setcmsdata] = useState("");
   const [cmsdata2, setcmsdata2] = useState("");
 
-  const getdata = async () => {
+  // API Call
+  const getcmsdata = async () => {
     const response = await axios({
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[67]);
-    setcmsdata2(response.data[68]);
+    setcmsdata(response.data[82]);
+    setcmsdata2(response.data[83]);
   };
+
+  // Render API
   useEffect(() => {
-    getdata();
+    getcmsdata();
   }, []);
+
   return (
     <div className="relative bgprimary h-banner w-full">
       <div className="absolute top-0 w-full h-banner flex items-center justify-center">

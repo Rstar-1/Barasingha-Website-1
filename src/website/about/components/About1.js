@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-import about from "../../../assets/lock.png";
 
 const About1 = () => {
   // CMS UseState Data
   const [cmsdata, setcmsdata] = useState("");
   const [cmsdata2, setcmsdata2] = useState("");
   const [cmsdata3, setcmsdata3] = useState("");
+  // CMS Image UseState Data
+  const [cmsimagedata, setcmsimagedata] = useState("");
 
   // API Call
   const getcmsdata = async () => {
@@ -15,14 +16,22 @@ const About1 = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[39]);
-    setcmsdata2(response.data[40]);
-    setcmsdata3(response.data[41]);
+    setcmsdata(response.data[38]);
+    setcmsdata2(response.data[39]);
+    setcmsdata3(response.data[40]);
   };
+ const getcmsimagedata = async () => {
+   const response = await axios({
+     method: "get",
+     url: "http://localhost:8000/api/getimagealldata",
+   });
+   setcmsimagedata(response.data[6]);
+ };
 
   // Render API
   useEffect(() => {
     getcmsdata();
+    getcmsimagedata();
   }, []);
 
   return (
@@ -31,7 +40,7 @@ const About1 = () => {
         <div className="flex sm-block w-full mtpx35 gap-12">
           <div className="w-40 sm-w-full prpx40 sm-prpx1">
             <img
-              src={about}
+              src={cmsimagedata.picture}
               alt="about1"
               className="about1-img object-contain"
             />

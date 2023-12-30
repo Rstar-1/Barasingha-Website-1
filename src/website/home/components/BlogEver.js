@@ -17,7 +17,7 @@ const BlogEver = () => {
   const getblogdata = async () => {
     const response = await axios({
       method: "get",
-      url: "http://localhost:8000/api/getdata",
+      url: "http://localhost:8000/api/getallblogdata",
     });
     setblogdata(response.data);
   };
@@ -26,9 +26,9 @@ const BlogEver = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[32]);
-    setcmsdata2(response.data[33]);
-    setcmsdata3(response.data[34]);
+    setcmsdata(response.data[33]);
+    setcmsdata2(response.data[34]);
+    setcmsdata3(response.data[35]);
   };
 
   // Render API
@@ -90,12 +90,12 @@ const BlogEver = () => {
               },
             }}
           >
-            {blogdata.map((element, id) => (
+            {blogdata.map((element) => (
               <SwiperSlide>
                 <NavLink to={`/blogoverview/${element._id}`}>
                   <div className="rounded-10 bgwhite d-shadow p10 sm-p5">
                     <img
-                      src={element.img}
+                      src={element.picture}
                       alt="logo"
                       className="blog-img bg-light-primary rounded-10 object-cover"
                     />

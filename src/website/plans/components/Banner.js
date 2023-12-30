@@ -13,8 +13,8 @@ const Banner = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[45]);
-    setcmsdata2(response.data[46]);
+    setcmsdata(response.data[44]);
+    setcmsdata2(response.data[45]);
   };
 
   // Render API

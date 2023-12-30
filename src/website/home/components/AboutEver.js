@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-import about from "../../../assets/log.png";
 
 const AboutEver = () => {
   // CMS UseState Data
@@ -14,6 +13,8 @@ const AboutEver = () => {
   const [cmsdata7, setcmsdata7] = useState("");
   const [cmsdata8, setcmsdata8] = useState("");
   const [cmsdata9, setcmsdata9] = useState("");
+  // CMS Image UseState Data
+  const [cmsimagedata, setcmsimagedata] = useState("");
 
   // API Call
   const getcmsdata = async () => {
@@ -21,20 +22,28 @@ const AboutEver = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[13]);
-    setcmsdata2(response.data[14]);
-    setcmsdata3(response.data[15]);
-    setcmsdata4(response.data[16]);
-    setcmsdata5(response.data[17]);
-    setcmsdata6(response.data[18]);
-    setcmsdata7(response.data[19]);
-    setcmsdata8(response.data[20]);
-    setcmsdata9(response.data[21]);
+    setcmsdata(response.data[14]);
+    setcmsdata2(response.data[15]);
+    setcmsdata3(response.data[16]);
+    setcmsdata4(response.data[17]);
+    setcmsdata5(response.data[18]);
+    setcmsdata6(response.data[19]);
+    setcmsdata7(response.data[20]);
+    setcmsdata8(response.data[21]);
+    setcmsdata9(response.data[22]);
+  };
+  const getcmsimagedata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/getimagealldata",
+    });
+    setcmsimagedata(response.data[2]);
   };
 
   // Render API
   useEffect(() => {
     getcmsdata();
+    getcmsimagedata();
   }, []);
 
   return (
@@ -43,7 +52,7 @@ const AboutEver = () => {
         <div className="flex sm-block w-full mtpx35 gap-12">
           <div className="w-50 sm-w-full prpx40 sm-prpx1">
             <img
-              src={about}
+              src={cmsimagedata.picture}
               alt="about"
               className="w-full aboutleft-img object-contain"
             />

@@ -20,15 +20,15 @@ const CardsEver = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[4]);
-    setcmsdata2(response.data[5]);
-    setcmsdata3(response.data[6]);
-    setcmsdata4(response.data[7]);
-    setcmsdata5(response.data[8]);
-    setcmsdata6(response.data[9]);
-    setcmsdata7(response.data[10]);
-    setcmsdata8(response.data[11]);
-    setcmsdata9(response.data[12]);
+    setcmsdata(response.data[5]);
+    setcmsdata2(response.data[6]);
+    setcmsdata3(response.data[7]);
+    setcmsdata4(response.data[8]);
+    setcmsdata5(response.data[9]);
+    setcmsdata6(response.data[10]);
+    setcmsdata7(response.data[11]);
+    setcmsdata8(response.data[12]);
+    setcmsdata9(response.data[13]);
   };
 
   // Render API

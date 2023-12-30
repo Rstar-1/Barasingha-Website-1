@@ -12,8 +12,8 @@ const ConnectEver = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[35]);
-    setcmsdata2(response.data[36]);
+    setcmsdata(response.data[90]);
+    setcmsdata2(response.data[91]);
   };
 
   // Render API

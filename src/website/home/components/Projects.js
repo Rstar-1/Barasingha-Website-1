@@ -17,8 +17,8 @@ const Projects = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[22]);
-    setcmsdata2(response.data[23]);
+    setcmsdata(response.data[23]);
+    setcmsdata2(response.data[24]);
   };
 
   // Render API

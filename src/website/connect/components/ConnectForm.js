@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import gol from "../../../assets/new2.png";
 import FeatherIcon from "feather-icons-react";
 
 const ConnectForm = () => {
@@ -15,6 +14,10 @@ const ConnectForm = () => {
   const [cmsdata8, setcmsdata8] = useState("");
   const [cmsdata9, setcmsdata9] = useState("");
   const [cmsdata10, setcmsdata10] = useState("");
+  // CMS Image UseState Data
+  const [cmsimagedata, setcmsimagedata] = useState("");
+  const [cmsimagedata2, setcmsimagedata2] = useState("");
+  const [cmsimagedata3, setcmsimagedata3] = useState("");
 
   // API Call
   const getcmsdata = async () => {
@@ -22,21 +25,31 @@ const ConnectForm = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[57]);
-    setcmsdata2(response.data[58]);
-    setcmsdata3(response.data[59]);
-    setcmsdata4(response.data[60]);
-    setcmsdata5(response.data[61]);
-    setcmsdata6(response.data[62]);
-    setcmsdata7(response.data[63]);
-    setcmsdata8(response.data[64]);
-    setcmsdata9(response.data[65]);
-    setcmsdata10(response.data[66]);
+    setcmsdata(response.data[61]);
+    setcmsdata2(response.data[62]);
+    setcmsdata3(response.data[63]);
+    setcmsdata4(response.data[64]);
+    setcmsdata5(response.data[65]);
+    setcmsdata6(response.data[66]);
+    setcmsdata7(response.data[67]);
+    setcmsdata8(response.data[68]);
+    setcmsdata9(response.data[69]);
+    setcmsdata10(response.data[70]);
+  };
+  const getcmsimagedata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/getimagealldata",
+    });
+    setcmsimagedata(response.data[11]);
+    setcmsimagedata2(response.data[12]);
+    setcmsimagedata3(response.data[13]);
   };
 
   // Render API
   useEffect(() => {
     getcmsdata();
+    getcmsimagedata();
   }, []);
 
   return (
@@ -44,7 +57,11 @@ const ConnectForm = () => {
       <div className="container mx-auto">
         <div className="grid-cols-3 sm-grid-cols-1 gap-12 ptpx30 sm-ptpx20 sm-pbpx20 pbpx50">
           <div className="text-center">
-            <img src={gol} alt="gol" className="connect-img object-contain" />
+            <img
+              src={cmsimagedata.picture}
+              alt="gol"
+              className="connect-img object-contain"
+            />
             <h3 className="textprimary font-600 mtpx10 mbpx1 fsize19 sm-fsize20">
               {cmsdata.title}
             </h3>
@@ -53,7 +70,11 @@ const ConnectForm = () => {
             </p>
           </div>
           <div className="text-center sm-mtpx30">
-            <img src={gol} alt="gol" className="connect-img object-contain" />
+            <img
+              src={cmsimagedata2.picture}
+              alt="gol"
+              className="connect-img object-contain"
+            />
             <h3 className="textprimary font-600 mtpx10 mbpx1 fsize19 sm-fsize20">
               {cmsdata3.title}
             </h3>
@@ -62,7 +83,11 @@ const ConnectForm = () => {
             </p>
           </div>
           <div className="text-center sm-mtpx30">
-            <img src={gol} alt="gol" className="connect-img object-contain" />
+            <img
+              src={cmsimagedata3.picture}
+              alt="gol"
+              className="connect-img object-contain"
+            />
             <h3 className="textprimary font-600 mtpx10 mbpx1 fsize19 sm-fsize20">
               {cmsdata5.title}
             </h3>

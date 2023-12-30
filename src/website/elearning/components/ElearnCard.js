@@ -6,15 +6,17 @@ const ElearnCard = () => {
   const [cmsdata, setcmsdata] = useState("");
   const [cmsdata2, setcmsdata2] = useState("");
   const [cmsdata3, setcmsdata3] = useState("");
+  const [cmsdata4, setcmsdata4] = useState("");
 
   const getdata = async () => {
     const response = await axios({
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[69]);
-    setcmsdata2(response.data[70]);
-    setcmsdata3(response.data[71]);
+    setcmsdata(response.data[84]);
+    setcmsdata2(response.data[85]);
+    setcmsdata3(response.data[86]);
+    setcmsdata4(response.data[87]);
   };
   useEffect(() => {
     getdata();
@@ -215,7 +217,7 @@ const ElearnCard = () => {
             <div className="mtpx20">
               <div className="bgwhite shadow ptpx5 pbpx5 plpx15 prpx15 rounded-5">
                 <h6 className="textprimary fsize17 mtpx1 mbpx1 font-semibold">
-                  Top Popular
+                  {cmsdata4.title}
                 </h6>
               </div>
               <div className="grid-cols-1 mtpx10">

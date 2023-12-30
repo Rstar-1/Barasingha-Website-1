@@ -1,8 +1,32 @@
-import React from "react";
-import ecom from "../../../assets/log.png";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import FeatherIcon from "feather-icons-react";
+import ecom from "../../../assets/log.png";
 
 const EcomCard = () => {
+  // CMS UseState Data
+  const [cmsdata, setcmsdata] = useState("");
+  const [cmsdata2, setcmsdata2] = useState("");
+  const [cmsdata3, setcmsdata3] = useState("");
+  const [cmsdata4, setcmsdata4] = useState("");
+
+  // API Call
+  const getcmsdata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/gettextalldata",
+    });
+    setcmsdata(response.data[73]);
+    setcmsdata2(response.data[74]);
+    setcmsdata3(response.data[75]);
+    setcmsdata4(response.data[76]);
+  };
+
+  // Render API
+  useEffect(() => {
+    getcmsdata();
+  }, []);
+
   return (
     <div className="bg-second ptpx40 pbpx40">
       <div className="container mx-auto">
@@ -10,11 +34,11 @@ const EcomCard = () => {
           <div className="w-20 p15 bgwhite rounded-10">
             <div className="">
               <h4 className="fsize18 mtpx9 mbpx1 textprimary font-500">
-                Filter by Category
+                {cmsdata.title}
               </h4>
               <div className="grid-cols-1 mtpx20 gap-5 prpx10 plpx10 bordb pbpx20">
                 <h5 className="fsize16 mtpx1 mbpx1 textdark font-500">
-                  Top Category
+                  {cmsdata2.title}
                 </h5>
                 <div className="flex items-center gap-4">
                   <input type="checkbox" />
@@ -31,7 +55,7 @@ const EcomCard = () => {
               </div>
               <div className="grid-cols-1 mtpx20 gap-5 prpx10 plpx10 bordb pbpx20">
                 <h5 className="fsize16 mtpx1 mbpx1 textdark font-500">
-                  Category
+                  {cmsdata3.title}
                 </h5>
                 <div className="flex items-center gap-4">
                   <input type="checkbox" />
@@ -60,7 +84,7 @@ const EcomCard = () => {
               </div>
               <div className="grid-cols-1 mtpx20 gap-5 prpx10 plpx10 bordb pbpx20">
                 <h5 className="fsize16 mtpx1 mbpx1 textdark font-500">
-                  Top Category
+                  {cmsdata4.title}
                 </h5>
                 <div className="flex items-center gap-4">
                   <input type="checkbox" />

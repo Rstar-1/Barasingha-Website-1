@@ -44,7 +44,7 @@ const Home = () => {
       <CardsEver />
       <AboutEver />
       <Projects />
-      <Service />
+      <Service /> 
       <BlogEver />
       <ConnectEver />
     </div>

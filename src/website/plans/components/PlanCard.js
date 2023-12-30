@@ -5,10 +5,7 @@ import FeatherIcon from "feather-icons-react";
 import Basicuser from "./popup/Basicuser";
 import Premiumuser from "./popup/Premiumuser";
 import SuperPremiumuser from "./popup/SuperPremiumuser";
-import copper from "../../../assets/copper.png";
 import plan from "../../../assets/plan.svg";
-import silver from "../../../assets/silver.png";
-import gold from "../../../assets/gold.png";
 
 const PlanCard = () => {
   // CMS UseState Data
@@ -18,6 +15,10 @@ const PlanCard = () => {
   const [cmsdata4, setcmsdata4] = useState("");
   const [cmsdata5, setcmsdata5] = useState("");
   const [cmsdata6, setcmsdata6] = useState("");
+  // CMS Image UseState Data
+  const [cmsimagedata, setcmsimagedata] = useState("");
+  const [cmsimagedata2, setcmsimagedata2] = useState("");
+  const [cmsimagedata3, setcmsimagedata3] = useState("");
 
   // Plans UseState Data
   const [getplansdata, setplansdata] = useState([]);
@@ -37,12 +38,21 @@ const PlanCard = () => {
       method: "get",
       url: "http://localhost:8000/api/gettextalldata",
     });
-    setcmsdata(response.data[47]);
-    setcmsdata2(response.data[48]);
-    setcmsdata3(response.data[49]);
-    setcmsdata4(response.data[50]);
-    setcmsdata5(response.data[51]);
-    setcmsdata6(response.data[52]);
+    setcmsdata(response.data[46]);
+    setcmsdata2(response.data[47]);
+    setcmsdata3(response.data[48]);
+    setcmsdata4(response.data[49]);
+    setcmsdata5(response.data[50]);
+    setcmsdata6(response.data[51]);
+  };
+  const getcmsimagedata = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/getimagealldata",
+    });
+    setcmsimagedata(response.data[8]);
+    setcmsimagedata2(response.data[9]);
+    setcmsimagedata3(response.data[10]);
   };
   const getplandata = async () => {
     const response = await axios({
@@ -69,6 +79,7 @@ const PlanCard = () => {
   // Render API
   useEffect(() => {
     getcmsdata();
+    getcmsimagedata();
     getplandata();
     getplandatatwo();
     getplandatathree();
@@ -144,7 +155,7 @@ const PlanCard = () => {
           <div className="grid-cols-3 sm-grid-cols-1 gap-12">
             <div className="p30 sm-p18 bgwhite rounded-10 shadow relative">
               <img
-                src={copper}
+                src={cmsimagedata.picture}
                 alt="copper"
                 className="plan-img bg-ec p5 rounded-full"
               />
@@ -188,7 +199,7 @@ const PlanCard = () => {
             </div>
             <div className="p30 sm-p18 bgwhite rounded-10 shadow relative">
               <img
-                src={silver}
+                src={cmsimagedata2.picture}
                 alt="copper"
                 className="plan-img bg-ec p5 rounded-full"
               />
@@ -232,7 +243,7 @@ const PlanCard = () => {
             </div>
             <div className="p30 sm-p18 bgwhite rounded-10 shadow relative">
               <img
-                src={gold}
+                src={cmsimagedata3.picture}
                 alt="copper"
                 className="plan-img bg-ec p5 rounded-full"
               />
